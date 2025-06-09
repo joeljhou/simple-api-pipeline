@@ -1,0 +1,5 @@
+server:
+  port: 6061
+spring:
+  application:
+    name: simple-api-pipeline
