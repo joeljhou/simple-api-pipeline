@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ExampleController {
     @GetMapping("/")
-    public String home() {return "success v2.0.0";}
+    public String home() {return "success main";}
 }
