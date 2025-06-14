@@ -1,5 +1,5 @@
 server:
-  port: 6061
+  port: 8080
 spring:
   application:
     name: simple-api-pipeline

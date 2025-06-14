@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  simple-api-pipeline:
+    build:
+      context: ../..
+      dockerfile: Dockerfile
+    container_name: simple-api-pipeline
+    ports:
+      - "8080:8080"
