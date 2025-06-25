@@ -28,6 +28,10 @@
     </scm>
     <properties>
         <java.version>17</java.version>
+        <!-- ⚠️ 不推荐将 Token 写入此处，可能导致泄露
+        <sonar.projectKey>simple-api-pipeline</sonar.projectKey>
+        <sonar.host.url>http://sonarqube.orb.local</sonar.host.url>
+        <sonar.login>squ_abe86801ab7aebae2547d14cafc5b168649ee5cd</sonar.login> -->
     </properties>
     <dependencies>
         <dependency>
