@@ -53,7 +53,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-## ========== 启动容器 ==========
+# ========== 启动容器 ==========
 echo "🚀 启动新容器: $CONTAINER_NAME"
 docker run -d \
   --name "$CONTAINER_NAME" \
