@@ -94,10 +94,16 @@ pipeline {
     }
     post {
         success {
-            echo '🎉 全部阶段 SUCCESS'
+            echo "✅ 成功构建：${env.JOB_NAME} | 版本：${env.BRANCH_OR_TAG} | 持续时间：${currentBuild.durationString}"
         }
         failure {
-            echo '❌ 流水线执行失败，请查看日志'
+            echo "❌ 构建失败：${env.JOB_NAME} | 版本：${env.BRANCH_OR_TAG} | 请查看日志"
+        }
+        unstable {
+            echo "⚠️ 构建不稳定：${env.JOB_NAME} | 版本：${env.BRANCH_OR_TAG} | 可能存在测试失败"
+        }
+        always {
+            echo "📦 构建结束：#${env.BUILD_NUMBER} | ${env.JOB_NAME}"
         }
     }
 }
