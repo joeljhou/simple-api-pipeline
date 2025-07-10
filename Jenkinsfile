@@ -12,13 +12,20 @@ pipeline {
     stages {
         stage('Git拉取代码') {
             steps {
-                echo '✅ Git拉取代码 SUCCESS'
-                }
+                checkout scmGit(
+                    branches: [[name: "${BRANCH_OR_TAG}"]],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        credentialsId: 'ff5a1807-5c7d-487c-bfc9-e4817ef59ff2',
+                        url: 'http://gitlab.orb.local/joeljhou/simple-api-pipeline.git'
+                    ]]
+                )
+            }
         }
         stage('Maven构建项目') {
             steps {
                 echo '✅ Maven构建项目 SUCCESS'
-                }
+            }
         }
         stage('SonarQube扫描') {
             steps {
